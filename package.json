@@ -1,0 +1,22 @@
+{
+  "name": "timely-stats",
+  "version": "1.0.0",
+  "description": "Repo used to collect and display TimeLY statistics using Node js ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noahweasley/TimeLY-stats.git"
+  },
+  "author": "Noah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noahweasley/TimeLY-stats/issues"
+  },
+  "homepage": "https://github.com/noahweasley/TimeLY-stats#readme",
+  "dependencies": {
+    "octokit": "^1.7.0"
+  }
+}
