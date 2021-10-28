@@ -22,14 +22,20 @@ function getAssetDownloadName(release) {
     return release["data"]["assets"][0].name
 }
 
-console.log("\n\nFeching data, please wait...\n\n")
+console.log("\nFeching data, please wait...\n\n")
 
 getLatestRelease()
     .catch(() => console.log('error occured'))
     .then(release => {
+
         if (release["status"] === 200) {
-            console.log(`Total download of ${getAssetDownloadName(release)} is ${getAssetDownloadCount(release)}`)
+
+            console.log('Total download count of \u001b[36m' +
+                getAssetDownloadName(release) + '\u001b[0m is \u001b[33m' +
+                getAssetDownloadCount(release) + '\u001b[0m')
+
         }
 
         console.log("\n\n")
+
     })
