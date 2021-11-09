@@ -1,4 +1,5 @@
-module.exports = json = {
+
+ let json = {
   status: 200,
   url: 'https://api.github.com/repos/noahweasley/TimeLY/releases/latest',
   headers: {

@@ -3,9 +3,7 @@ const {
 } = require('octokit')
 
 // Create a personal access token to use with Octokit
-const octokit = new Octokit({
-    auth: `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`
-})
+const octokit = new Octokit()
 
 async function getLatestRelease() {
     return await octokit.request("GET /repos/{owner}/{repo}/releases/latest", {
@@ -22,20 +20,16 @@ function getAssetDownloadName(release) {
     return release["data"]["assets"][0].name
 }
 
-console.log("\nFeching data, please wait...\n\n")
+console.log("\n Feching data, please wait...\n\n")
 
 getLatestRelease()
-    .catch(() => console.log('error occured'))
     .then(release => {
 
         if (release["status"] === 200) {
 
-            console.log('Total download count of \u001b[36m' +
-                getAssetDownloadName(release) + '\u001b[0m is \u001b[33m' +
-                getAssetDownloadCount(release) + '\u001b[0m')
+            console.log(`   Total download count of \n
+            ${getAssetDownloadName(release)} is ${getAssetDownloadCount(release)}`)
 
         }
 
-        console.log("\n\n")
-
-    })
+    }).catch(() => console.log('An Error occured, exiting...\n'))
